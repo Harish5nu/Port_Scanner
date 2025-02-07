@@ -1,6 +1,5 @@
 # Port_Scanner
-Simple Port Scanner
-This is a simple Python-based port scanner that helps you scan a given IP address for open or closed ports within a specified range.
+This Python script is a basic port scanner that allows you to scan a range of ports on a given target IP address to determine if they are open or closed. This tool is intended for educational purposes only and should be used responsibly within legal boundaries.
 
 Features:
 Scans a range of ports on a target IP.
