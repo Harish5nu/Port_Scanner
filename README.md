@@ -7,6 +7,7 @@ Scans a range of ports on a target IP.
 Identifies open and closed ports.
 Prints the scan results for each port.
 Calculates the total time taken for the scan.
+/n
 Requirements:
 Python 3.x
 socket module (comes pre-installed with Python)
