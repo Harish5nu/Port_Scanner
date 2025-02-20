@@ -1,26 +1,16 @@
 import socket
-from datetime import datetime
 
-def scan_port(target, port):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(1)
-    if sock.connect_ex((target, port)) == 0:
-        print(f"Port {port} is OPEN")
-    else:
-        print(f"Port {port} is CLOSED")
-    sock.close()
+def scan_ports(target, ports):
+    print(f"Scanning {target}...")
+    for port in ports:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)  # Set timeout to 1 second
+        result = sock.connect_ex((target, port))
+        if result == 0:
+            print(f"Port {port} is open")
+        sock.close()
 
-def scan_ports(target, start_port, end_port):
-    print(f"Scanning {target} from port {start_port} to {end_port}...")
-    start_time = datetime.now()
-
-    for port in range(start_port, end_port + 1):
-        scan_port(target, port)
-
-    print(f"Scan completed in: {datetime.now() - start_time}")
-
-target_ip = input("Enter IP to scan: ")
-start_port = int(input("Start port: "))
-end_port = int(input("End port: "))
-
-scan_ports(target_ip, start_port, end_port)
+if __name__ == "__main__":
+    target_ip = input("Enter target IP: ")
+    ports_to_scan = [21, 22, 23, 25, 53, 80, 443, 3306, 8080]  # Common ports
+    scan_ports(target_ip, ports_to_scan)
