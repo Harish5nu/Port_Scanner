@@ -11,6 +11,6 @@ def scan_ports(target, ports):
         sock.close()
 
 if __name__ == "__main__":
-    target_ip = input("Enter target IP for port scanning: ")
-    ports_to_scan = [21, 22, 23, 25, 53, 80, 443, 3306, 8080]  # Common ports
+    target_ip = input("Enter target IP for scanning: ")
+    ports_to_scan = [21, 22, 23, 25, 53, 80, 443, 3306, 8080]  # Some Common ports
     scan_ports(target_ip, ports_to_scan)
