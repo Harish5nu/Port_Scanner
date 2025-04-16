@@ -15,8 +15,8 @@ def scan_port(target, port):
         print(f"Couldn't connect to {target} on port {port}")
 
 # Input from the user
-target = input("Enter target IP address: ")
-port = int(input("Enter port number to check: "))
+target = input("Enter target IP address:............ ")
+port = int(input("Enter port number to check:....... "))
 
 # Scan the specified port
 scan_port(target, port)
